@@ -45,7 +45,7 @@ def scrape():
     images = soup.find('article')
     image_url = images.find('a')['data-fancybox-href']
     mars_data['featured_image_url'] = site_url + image_url
-
+    
 
     # Mars Facts
     facts_url = 'https://space-facts.com/mars/'

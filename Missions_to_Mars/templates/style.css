@@ -1,0 +1,38 @@
+.img_enhanced {
+   width: 600px;
+   margin: 5px;
+}
+.img-responsive {
+  width: 600px;
+  margin: 5 px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px black solid;
+  font: 12px sans-serif;
+  margin-left: : 10px;
+  background: #fff;
+}
+
+th {
+  border: 1px black solid;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+thead {
+  background: #000;
+  color: #fff;
+}
+
+td {
+  border: 1px black solid;
+  padding: 5px;
+}
+
+
+
+ 

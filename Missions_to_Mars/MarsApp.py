@@ -28,7 +28,7 @@ def index():
 def scraper():
     MarsData = db.MarsData
     mars_data = scrape_mars.scrape()
-    MarsData.insert_one(mars_data)
+    MarsData.update({}, mars_data, upsert=True)
     return redirect("/", code=302)
 
 

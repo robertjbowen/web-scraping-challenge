@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
-  <!--link rel="stylesheet" href="Resources/reset.css">
-  <link rel="stylesheet" href="Resources/style.css" -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css" >
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -37,7 +37,7 @@
       </div>
       <div class="col-md-4">
         <h2 class="heading">Mars Facts</h2>
-        <a>{{ MarsData.mars_facts }}</a>
+        {{ MarsData.mars_facts }} 
       </div>
     </div>
 
@@ -58,7 +58,7 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <img class="img_enhanced" src="{{ Data.hemisphere_image_urls[2].img_url }}" 
+          <img class="img_enhanced" src="{{ MarsData.hemisphere_image_urls[2].img_url }}" 
             class="img-responsive" alt="Enhanced high resolution image of Mars' Syrtis Major Hemisphere" />
           <h4 class="heading">{{ MarsData.hemisphere_image_urls[2].title }}</h4>
         </div>
