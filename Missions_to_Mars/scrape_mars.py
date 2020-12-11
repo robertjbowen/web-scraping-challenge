@@ -49,7 +49,8 @@ def scrape():
 
     # Mars Facts
     facts_url = 'https://space-facts.com/mars/'
-    mars_data['mars_facts'] = pd.read_html(facts_url)[0].to_html()
+    pd.read_html(facts_url)[0].to_html('templates/mars_facts.html')
+    mars_data['mars_facts'] = pd.read_html(facts_url)[0].to_dict()
 
 
     #Mars Hemispheres
