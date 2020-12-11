@@ -6,31 +6,29 @@ Created on Sun Dec  6 18:46:48 2020
 """
 
 from flask import Flask, render_template, redirect
-from flask_pymongo import PyMongo
 import pymongo
 import scrape_mars
 
 app = Flask(__name__)
 
-# Create connection variable
-conn = 'mongodb://localhost:27017'
+# Create connection to the pymongo instance.
+client = pymongo.MongoClient('mongodb://localhost:27017')
 
-# Pass connection to the pymongo instance.
-client = pymongo.MongoClient(conn)
+# Create a Database
+db = client["Mars_db"]
 
-MarsData = client
 
 @app.route("/")
 def index():
-    MarsData = mongo.db.MarsData.find_one()
+    MarsData = db.MarsData.find_one()
     return render_template("index.html", MarsData=MarsData)
 
 
 @app.route("/scrape")
 def scraper():
-    MarsData = mongo.db.MarsData
+    MarsData = db.MarsData
     mars_data = scrape_mars.scrape()
-    MarsData.update({}, mars_data, upsert=True)
+    MarsData.insert_one(mars_data)
     return redirect("/", code=302)
 
 
