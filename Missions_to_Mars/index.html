@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
+  <link rel="stylesheet" href="Resources/reset.css">
+  <link rel="stylesheet" href="Resources/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -21,31 +23,49 @@
     <div class="row" id="mars_news">
       <div class="col-md-12">
         <h2 class="heading">Latest Mars News</h2>
-        <a>{{MarsData.news_title}}</a><Br>
-        <small>{{MarsData.news_p}}</small>
+        <a>{{ MarsData.news_title }}</a><Br>
+        <small>{{ MarsData.news_p }}</small>
       </div>
     </div>
 
     <!-- Featured Image and Facts -->
     <div class="row" id="mars_features_and_facts">
       <div class="col-md-8">
+        <h2 class="heading">Featured Image</h2>
+        <img class="img_enhanced" src="{{ MarsData.featured_image_url }}" 
+            class="img-responsive" alt="NASA JPL Daily Featured image" />
       </div>
       <div class="col-md-4">
+        <h2 class="heading">Mars Facts</h2>
+        <a>{{ MarsData.mars_facts }}</a>
       </div>
     </div>
 
     <!-- Hemisphere Images -->
     <div class="col-md-12" id="images_title">
+      <h2 class="heading">Hemisphere Images</h2>
       <div class="row">
         <div class="col-md-6">
+          <img class="img_enhanced" src="{{ MarsData.hemisphere_image_urls[0].img_url }}" 
+            class="img-responsive" alt="Enhanced high resolution image of Mars' Cerberus Hemisphere" />
+          <h2 class="heading">{{ MarsData.hemisphere_image_urls[0].title }}</h2>
         </div>
         <div class="col-md-6">
+          <img class="img_enhanced" src="{{ MarsData.hemisphere_image_urls[1].img_url }}" 
+            class="img-responsive" alt="Enhanced high resolution image of Mars' Schiaparelli Hemisphere" />
+          <h2 class="heading">{{ MarsData.hemisphere_image_urls[1].title }}</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
+          <img class="img_enhanced" src="{{ Data.hemisphere_image_urls[2].img_url }}" 
+            class="img-responsive" alt="Enhanced high resolution image of Mars' Syrtis Major Hemisphere" />
+          <h2 class="heading">{{ MarsData.hemisphere_image_urls[2].title }}</h2>
         </div>
         <div class="col-md-6">
+          <img class="img_enhanced" src="{{ MarsData.hemisphere_image_urls[3].img_url }}" 
+            class="img-responsive" alt="Enhanced high resolution image of Mars' Valles Marineris Hemisphere" />
+          <h2 class="heading">{{ MarsData.hemisphere_image_urls[3].title }}</h2>
         </div>
       </div>
     </div>

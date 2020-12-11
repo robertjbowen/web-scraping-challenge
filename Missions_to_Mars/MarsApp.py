@@ -18,6 +18,7 @@ conn = 'mongodb://localhost:27017'
 # Pass connection to the pymongo instance.
 client = pymongo.MongoClient(conn)
 
+MarsData = client
 
 @app.route("/")
 def index():
