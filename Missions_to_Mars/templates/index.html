@@ -8,8 +8,7 @@
   <title>Mission to Mars</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -23,27 +22,31 @@
     <!-- Mars News -->
     <div class="row" id="mars_news">
       <div class="col-md-12">
-        <h2 class="heading">Latest Mars News</h2>
-        <a>{{ MarsData.news_title }}</a><Br>
-        <small>{{ MarsData.news_p }}</small>
+        <h2 class="heading">Latest Mars News</h2><Br>
+        <h5>{{ MarsData.news_title }}</h5>
+        <p style="width:100%">{{ MarsData.news_p }}</p>
       </div>
     </div>
     <Br>
 
     <!-- Featured Image and Facts -->
     <div class="row" id="mars_features_and_facts">
-      <div class="col-md-8">
+      <div class="col-md-7">
         <h2 class="heading">Featured Image</h2>
-        <img style='width:600px;' src="{{ MarsData.featured_image_url }}" 
+        <img style='width:100%;' src="{{ MarsData.featured_image_url }}" 
             alt="NASA JPL Daily Featured image" />
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <h2 class="heading">Mars Facts</h2>
-        <table border="1" class="dataframe">
-          <thead>
+        <table border="2" class="dataframe" style="width:100%">
+          <thead style='background-color: lightgray;'>
+            <tr style="text-align: left;">
+              <th></th>
+              <th>Mars</th>
+            </tr>
             <tr style="text-align: left;">
               <th>Description</th>
-              <th>Mars</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -51,7 +54,7 @@
               <th>Equatorial Diameter:</th>
               <td>{{ MarsData.mars_facts['Equatorial Diameter:'] }}</td>
             </tr>
-            <tr>
+            <tr style='background-color: #f8f9fa;'>
               <th>Polar Diameter:</th>
               <td>{{ MarsData.mars_facts['Polar Diameter:'] }}</td>
             </tr>
@@ -59,7 +62,7 @@
               <th>Mass:</th>
               <td>{{ MarsData.mars_facts['Mass:'] }}</td>
             </tr>
-            <tr>
+            <tr style='background-color: #f8f9fa;'>
               <th>Moons:</th>
               <td>{{ MarsData.mars_facts['Moons:'] }}</td>
             </tr>
@@ -67,7 +70,7 @@
               <th>Orbit Distance:</th>
               <td>{{ MarsData.mars_facts['Orbit Distance:'] }}</td>
             </tr>
-            <tr>
+            <tr style='background-color: #f8f9fa;'>
               <th>Orbit Period:</th>
               <td>{{ MarsData.mars_facts['Orbit Period:'] }}</td>
             </tr>
@@ -75,7 +78,7 @@
               <th>Surface Temperature:</th>
               <td>{{ MarsData.mars_facts['Surface Temperature:'] }}</td>
             </tr>
-            <tr>
+            <tr style='background-color: #f8f9fa;'>
               <th>First Record:</th>
               <td>{{ MarsData.mars_facts['First Record:'] }}</td>
             </tr>
@@ -91,33 +94,43 @@
 
     <!-- Hemisphere Images -->
     <div class="col-md-12" id="images_title">
-      <h2 class="heading">Hemisphere Images</h2>
+      <h2 style="text-align: center;" class="heading">Mars Hemispheres</h2>
+      <hr>
       <div class="row">
         <div class="col-md-6">
-          <img class="img_enhanced" style='width:512px;' src="{{ MarsData.hemisphere_image_urls[0].img_url }}" 
-            class="img-responsive" alt="Enhanced high resolution image of Mars' Cerberus Hemisphere" />
-          <h4 class="heading">{{ MarsData.hemisphere_image_urls[0].title }}</h4>
+          <div style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+            <img class="img_enhanced" style='width:100%;' src="{{ MarsData.hemisphere_image_urls[0].img_url }}" 
+              class="img-responsive" alt="Enhanced high resolution image of Mars' Cerberus Hemisphere" />
+            <h4 class="heading">{{ MarsData.hemisphere_image_urls[0].title }}</h4>
+          </div>
         </div>
         <div class="col-md-6">
-          <img class="img_enhanced" style='width:512px;' src="{{ MarsData.hemisphere_image_urls[1].img_url }}" 
-            class="img-responsive" alt="Enhanced high resolution image of Mars' Schiaparelli Hemisphere" />
-          <h4 class="heading">{{ MarsData.hemisphere_image_urls[1].title }}</h4>
+          <div style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+            <img class="img_enhanced" style='width:100%;' src="{{ MarsData.hemisphere_image_urls[1].img_url }}" 
+              class="img-responsive" alt="Enhanced high resolution image of Mars' Schiaparelli Hemisphere" />
+            <h4 class="heading">{{ MarsData.hemisphere_image_urls[1].title }}</h4>
+          </div>
         </div>
       </div>
       <Br>
       <div class="row">
         <div class="col-md-6">
-          <img class="img_enhanced" style='width:512px;' src="{{ MarsData.hemisphere_image_urls[2].img_url }}" 
-            class="img-responsive" alt="Enhanced high resolution image of Mars' Syrtis Major Hemisphere" />
-          <h4 class="heading">{{ MarsData.hemisphere_image_urls[2].title }}</h4>
+          <div style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+            <img class="img_enhanced" style='width:100%;' src="{{ MarsData.hemisphere_image_urls[2].img_url }}" 
+              class="img-responsive" alt="Enhanced high resolution image of Mars' Syrtis Major Hemisphere" />
+            <h4 class="heading">{{ MarsData.hemisphere_image_urls[2].title }}</h4>
+          </div>
         </div>
         <div class="col-md-6">
-          <img class="img_enhanced" style='width:512px;' src="{{ MarsData.hemisphere_image_urls[3].img_url }}" 
-            class="img-responsive" alt="Enhanced high resolution image of Mars' Valles Marineris Hemisphere" />
-          <h4 class="heading">{{ MarsData.hemisphere_image_urls[3].title }}</h4>
+          <div style="border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+            <img class="img_enhanced" style='width:100%;' src="{{ MarsData.hemisphere_image_urls[3].img_url }}" 
+              class="img-responsive" alt="Enhanced high resolution image of Mars' Valles Marineris Hemisphere" />
+            <h4 class="heading">{{ MarsData.hemisphere_image_urls[3].title }}</h4>
+          </div>
         </div>
       </div>
     </div>
+    <Br>
 
   </div>
 </body>

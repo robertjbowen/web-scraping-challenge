@@ -25,12 +25,13 @@ def scrape():
 
     # Mars News
     url = "https://mars.nasa.gov/news/"
+    
     browser.visit(url)
-
     soup = BeautifulSoup(browser.html, 'html.parser')
 
-    mars_data['news_title'] = soup.find('li', class_='slide').find_all(class_='content_title')[0].text
-    mars_data['news_p'] = soup.find('li', class_='slide').find_all(class_='article_teaser_body')[0].text
+    news_article = soup.find('li', class_='slide')
+    mars_data['news_title'] = news_article.find_all(class_='content_title')[0].text
+    mars_data['news_p'] = news_article.find_all(class_='article_teaser_body')[0].text
 
 
     # JPL Mars Space Images - Featured Image
@@ -38,8 +39,8 @@ def scrape():
     search_criteria = 'spaceimages'
     location = 'Mars'
     query_url = f'{site_url}/{search_criteria}/?search=&category={location}'
+    
     browser.visit(query_url)
-
     soup = BeautifulSoup(browser.html, 'html.parser')
 
     images = soup.find('article')
@@ -49,12 +50,11 @@ def scrape():
 
     # Mars Facts
     facts_url = 'https://space-facts.com/mars/'
-    pd.read_html(facts_url)[0].to_html('templates/mars_facts.html')
     mars_facts = pd.read_html(facts_url)[0]
     mars_facts.rename(columns={0:"Description", 1:"Mars"},inplace=True)
     mars_facts = mars_facts.set_index('Description')
+    mars_facts.to_html('templates/mars_facts.html')
     mars_data['mars_facts'] = mars_facts['Mars'].to_dict()
-    # mars_data['mars_facts'] = pd.read_html(facts_url)[0].to_dict()
 
 
     #Mars Hemispheres
@@ -74,7 +74,6 @@ def scrape():
         hemisphere_image_urls.append(hemisphere_dict)
 
     mars_data['hemisphere_image_urls'] = hemisphere_image_urls
-    
     browser.quit()
 
     return mars_data
