@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css" >
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -32,64 +33,54 @@
     <div class="row" id="mars_features_and_facts">
       <div class="col-md-8">
         <h2 class="heading">Featured Image</h2>
-        <img class="img_enhanced" src="{{ MarsData.featured_image_url }}" 
-            class="img-responsive" alt="NASA JPL Daily Featured image" />
+        <img src="{{ MarsData.featured_image_url }}" 
+            alt="NASA JPL Daily Featured image" />
       </div>
       <div class="col-md-4">
         <h2 class="heading">Mars Facts</h2>
         <table border="1" class="dataframe">
           <thead>
             <tr style="text-align: right;">
-              <th></th>
               <th>Description</th>
               <th>Mars</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th>0</th>
-              <td>Equatorial Diameter:</td>
-              <td>{{ MarsData.mars_facts[1][0] }}</td>
+              <th>Equatorial Diameter:</th>
+              <td>{{ MarsData.mars_facts['Equatorial Diameter:'] }}</td>
             </tr>
             <tr>
-              <th>1</th>
-              <td>Polar Diameter:</td>
-              <td>{{ MarsData.mars_facts[1][1] }}</td>
+              <th>Polar Diameter:</th>
+              <td>{{ MarsData.mars_facts['Polar Diameter:'] }}</td>
             </tr>
             <tr>
-              <th>2</th>
-              <td>Mass:</td>
-              <td>{{ MarsData.mars_facts[1][2] }}</td>
+              <th>Mass:</th>
+              <td>{{ MarsData.mars_facts['Mass:'] }}</td>
             </tr>
             <tr>
-              <th>3</th>
-              <td>Moons:</td>
-              <td>{{ MarsData.mars_facts[1][3] }}</td>
+              <th>Moons:</th>
+              <td>{{ MarsData.mars_facts['Moons:'] }}</td>
             </tr>
             <tr>
-              <th>4</th>
-              <td>Orbit Distance:</td>
-              <td>{{ MarsData.mars_facts[1][4] }}</td>
+              <th>Orbit Distance:</th>
+              <td>{{ MarsData.mars_facts['Orbit Distance:'] }}</td>
             </tr>
             <tr>
-              <th>5</th>
-              <td>Orbit Period:</td>
-              <td>{{ MarsData.mars_facts[1][5] }}</td>
+              <th>Orbit Period:</th>
+              <td>{{ MarsData.mars_facts['Orbit Period:'] }}</td>
             </tr>
             <tr>
-              <th>6</th>
-              <td>Surface Temperature:</td>
-              <td>{{ MarsData.mars_facts[1][6] }}</td>
+              <th>Surface Temperature:</th>
+              <td>{{ MarsData.mars_facts['Surface Temperature:'] }}</td>
             </tr>
             <tr>
-              <th>7</th>
-              <td>First Record:</td>
-              <td>{{ MarsData.mars_facts[1][7] }}</td>
+              <th>First Record:</th>
+              <td>{{ MarsData.mars_facts['First Record:'] }}</td>
             </tr>
             <tr>
-              <th>8</th>
-              <td>Recorded By:</td>
-              <td>{{ MarsData.mars_facts[1][8] }}</td>
+              <th>Recorded By:</th>
+              <td>{{ MarsData.mars_facts['Recorded By:'] }}</td>
             </tr>
           </tbody>
         </table> 
