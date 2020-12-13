@@ -57,7 +57,7 @@ Note: You must initialize the Mars_db database by visiting 127.0.0.1:5000/scrape
 
 ***
 
-	Mars News - Uses Splinter to open a browser connection to 'https://mars.nasa.gov/news/' and then uses BeautifulSoup to parse the sites html into a variable called soup. The text values of the 'content title' and the 'article teaser body' of the first news article slide are scraped and saved to the mars_data dictionary under the keys: 'news_title' and 'news_p'
+	* Mars News - Uses Splinter to open a browser connection to 'https://mars.nasa.gov/news/' and then uses BeautifulSoup to parse the sites html into a variable called soup. The text values of the 'content title' and the 'article teaser body' of the first news article slide are scraped and saved to the mars_data dictionary under the keys: 'news_title' and 'news_p'
 
 <p>
     <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/scrapeNews.png"/>
@@ -67,7 +67,7 @@ Note: You must initialize the Mars_db database by visiting 127.0.0.1:5000/scrape
 
 ***
 
-	JPL Mars Space Images - Again uses Splinter and BeautifulSoup to open a browser connection to 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'. This function scrapes the image url from the html image href called 'data-fancybox-href' of the current Featured Image from the page. The site url is concatinated with the scraped image url to create a complete url then saved in the mars_data dictionary under the key 'featured_image_url'.
+	* JPL Mars Space Images - Again uses Splinter and BeautifulSoup to open a browser connection to 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'. This function scrapes the image url from the html image href called 'data-fancybox-href' of the current Featured Image from the page. The site url is concatinated with the scraped image url to create a complete url then saved in the mars_data dictionary under the key 'featured_image_url'.
 
 <p>
     <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/scrapeFeaturedImg.png"/>
@@ -77,7 +77,7 @@ Note: You must initialize the Mars_db database by visiting 127.0.0.1:5000/scrape
 
 ***
 
-	Mars Facts - Uses Pandas pd.read_html function to scrape all of the tables from the website 'https://space-facts.com/mars/'. A DateFrame is created from the first table on the page and is formatted to create column labels and set the 'Description Column as the table index. This DataFrame is written to an html file in the templates folder called mars_facts.html and is saved in the mars_data dictionary under the key 'mars_facts'.
+	* Mars Facts - Uses Pandas pd.read_html function to scrape all of the tables from the website 'https://space-facts.com/mars/'. A DateFrame is created from the first table on the page and is formatted to create column labels and set the 'Description Column as the table index. This DataFrame is written to an html file in the templates folder called mars_facts.html and is saved in the mars_data dictionary under the key 'mars_facts'.
 
 <p>
     <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/Mars_Facts.png"/>
@@ -87,7 +87,7 @@ Note: You must initialize the Mars_db database by visiting 127.0.0.1:5000/scrape
 
 ***
 
-	Mars Hemispheres - Uses a list of the four Marsian Hemispheres and the Splinter and BeautifulSoup methodology from above on the web pages 'https://astrogeology.usgs.gov/search/map/Mars/Viking/{list items} to scrape the image titles and urls for the enhnaced images of each hemisphere. The title text is truncated to remove the word ' enhanced' and the image url is concatenated to the site url to create a full image url. The title and image url values are saved to a data dictionary called hemisphere_dict. The dictionary is then appended to a list called hemisphere_image_urls. Once all four images are scraped, the final list is saved to the mars_data dictionary under the key 'hemisphere_image_urls'.
+	* Mars Hemispheres - Uses a list of the four Marsian Hemispheres and the Splinter and BeautifulSoup methodology from above on the web pages 'https://astrogeology.usgs.gov/search/map/Mars/Viking/{list items} to scrape the image titles and urls for the enhnaced images of each hemisphere. The title text is truncated to remove the word ' enhanced' and the image url is concatenated to the site url to create a full image url. The title and image url values are saved to a data dictionary called hemisphere_dict. The dictionary is then appended to a list called hemisphere_image_urls. Once all four images are scraped, the final list is saved to the mars_data dictionary under the key 'hemisphere_image_urls'.
 
 <p>
     <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/Mars_Hemispheres.png"/>
@@ -101,13 +101,13 @@ Note: You must initialize the Mars_db database by visiting 127.0.0.1:5000/scrape
 
 The third major piece to this project is the web image template used to display all of the scraped images and data. The file uses  bootstrap column and row style template formatting to display the information in 5 rows.
 
-	Row 1 - Header - is a simple preformatted jumbotron header containing a single button with an href to activeate the scrape function
+	* Row 1 - Header - is a simple preformatted jumbotron header containing a single button with an href to activeate the scrape function
 
-	Row 2 - Mars News - loads and displays the values from the MarsData dictionary for the keys news_title and news_p 
+	* Row 2 - Mars News - loads and displays the values from the MarsData dictionary for the keys news_title and news_p 
 
-	Row 3 - Featured Image and Facts - uses bootstrap to divide the row into two boxes of widths 7 and 5. The first box displays the  image from MarsData.featured_image_url styling the image to fill the entire width of the box. The height is not fixed as the images vary in dimension (the image size ratio is locked so the height adjusts in proportion to the width automatically). The second box displays the mars_facts table. The table structure was built from the mars_data.html file scraped from the site and imported into index.html.
+	* Row 3 - Featured Image and Facts - uses bootstrap to divide the row into two boxes of widths 7 and 5. The first box displays the  image from MarsData.featured_image_url styling the image to fill the entire width of the box. The height is not fixed as the images vary in dimension (the image size ratio is locked so the height adjusts in proportion to the width automatically). The second box displays the mars_facts table. The table structure was built from the mars_data.html file scraped from the site and imported into index.html.
 
-	Rows 4 and 5 - Hemisphere Images - loads, styles, and displays the enhanced hemisphere images in two rows of two images each with their titles displayed beneath each image. Like above, width styling locks the image width to the width of the column and additional styling creates a border around each image. 
+	* Rows 4 and 5 - Hemisphere Images - loads, styles, and displays the enhanced hemisphere images in two rows of two images each with their titles displayed beneath each image. Like above, width styling locks the image width to the width of the column and additional styling creates a border around each image. 
 
 <p>
     <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/FullPage.png"/>
