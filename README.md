@@ -59,26 +59,39 @@ Note: You must initialize the Mars_db database by visiting 127.0.0.1:5000/scrape
 
 Mars News - Uses Splinter to open a browser connection to 'https://mars.nasa.gov/news/' and then uses BeautifulSoup to parse the sites html into a variable called soup. The text values of the 'content title' and the 'article teaser body' of the first news article slide are scraped and saved to the mars_data dictionary under the keys: 'news_title' and 'news_p'
 
-![alt tag](https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/scrapeNews.png)
+<p>
+    <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/scrapeNews.png"/>
+    <br>
+    <em>https://mars.nasa.gov/news/ with inspect highlighting location of scraped material</em>
+</p>
 
 ***
 
 JPL Mars Space Images - Again uses Splinter and BeautifulSoup to open a browser connection to 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'. This function scrapes the image url from the html image href called 'data-fancybox-href' of the current Featured Image from the page. The site url is concatinated with the scraped image url to create a complete url then saved in the mars_data dictionary under the key 'featured_image_url'.
 
-![alt tag](https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/scrapeFeaturedImg.png)
-
+<p>
+    <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/scrapeFeaturedImg.png"/>
+    <br>
+    <em>https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars with inspect highlighting location of scraped material</em>
+</p>
 ***
 
 Mars Facts - Uses Pandas pd.read_html function to scrape all of the tables from the website 'https://space-facts.com/mars/'. A DateFrame is created from the first table on the page and is formatted to create column labels and set the 'Description Column as the table index. This DataFrame is written to an html file in the templates folder called mars_facts.html and is saved in the mars_data dictionary under the key 'mars_facts'.
 
-![alt tag](https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/Mars_Facts.png)
-
+<p>
+    <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/Mars_Facts.png"/>
+    <br>
+    <em>https://space-facts.com/mars/ - showing location of scraped table</em>
+</p>
 ***
 
 Mars Hemispheres - Uses a list of the four Marsian Hemispheres and the Splinter and BeautifulSoup methodology from above on the web pages 'https://astrogeology.usgs.gov/search/map/Mars/Viking/{list items} to scrape the image titles and urls for the enhnaced images of each hemisphere. The title text is truncated to remove the word ' enhanced' and the image url is concatenated to the site url to create a full image url. The title and image url values are saved to a data dictionary called hemisphere_dict. The dictionary is then appended to a list called hemisphere_image_urls. Once all four images are scraped, the final list is saved to the mars_data dictionary under the key 'hemisphere_image_urls'.
 
-![alt tag](https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/Mars_Hemispheres.png)
-
+<p>
+    <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/Mars_Hemispheres.png"/>
+    <br>
+    <em>https://astrogeology.usgs.gov/search/map/Mars/Viking/ showing thumbnails of all four images to be scraped</em>
+</p>
 ***
 
 ## index.html
@@ -93,6 +106,10 @@ Row 3 - Featured Image and Facts - uses bootstrap to divide the row into two box
 
 Rows 4 and 5 - Hemisphere Images - loads, styles, and displays the enhanced hemisphere images in two rows of two images each with their titles displayed beneath each image. Like above, width styling locks the image width to the width of the column and additional styling creates a border around each image. 
 
-![alt tag](https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/FullPage.png)
+<p>
+    <img  style='margin: auto;' src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/FullPage.png"/>
+    <br>
+    <em>127.0.0.1:5000 - Full page view of final web site rendering</em>
+</p>
 
 ***
