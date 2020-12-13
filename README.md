@@ -19,7 +19,7 @@ The purpose of this challenge is to use html code to create a web interface to d
 
 	* Mongo_development.ipynb - python notebook generated in Jupyter Lab to develop and test the MarsApp code
 
-	templates directory - folder containing the html files
+	* templates directory - folder containing the html files
 
 		* index.html - This is the html code to generate the web Landing Page called by the index app in MarsApp.
 
