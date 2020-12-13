@@ -106,8 +106,8 @@ Row 3 - Featured Image and Facts - uses bootstrap to divide the row into two box
 
 Rows 4 and 5 - Hemisphere Images - loads, styles, and displays the enhanced hemisphere images in two rows of two images each with their titles displayed beneath each image. Like above, width styling locks the image width to the width of the column and additional styling creates a border around each image. 
 
-<p>
-    <img  style='margin: auto;' src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/FullPage.png"/>
+<p style='margin: auto; width: 50%'>
+    <img src="https://github.com/robertjbowen/web-scraping-challenge/blob/main/images/FullPage.png"/>
     <br>
     <em>127.0.0.1:5000 - Full page view of final web site rendering</em>
 </p>
