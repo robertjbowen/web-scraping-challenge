@@ -23,7 +23,7 @@ def scrape():
     mars_data = {}
 
 
-    # Mars News
+# Mars News
     url = "https://mars.nasa.gov/news/"
     
     browser.visit(url)
@@ -34,7 +34,7 @@ def scrape():
     mars_data['news_p'] = news_article.find_all(class_='article_teaser_body')[0].text
 
 
-    # JPL Mars Space Images - Featured Image
+# JPL Mars Space Images - Featured Image
     site_url = 'https://www.jpl.nasa.gov'
     search_criteria = 'spaceimages'
     location = 'Mars'
@@ -48,7 +48,7 @@ def scrape():
     mars_data['featured_image_url'] = site_url + image_url
     
 
-    # Mars Facts
+# Mars Facts
     facts_url = 'https://space-facts.com/mars/'
     mars_facts = pd.read_html(facts_url)[0]
     mars_facts.rename(columns={0:"Description", 1:"Mars"},inplace=True)
@@ -57,7 +57,7 @@ def scrape():
     mars_data['mars_facts'] = mars_facts['Mars'].to_dict()
 
 
-    #Mars Hemispheres
+#Mars Hemispheres
     site_url = 'https://astrogeology.usgs.gov'
     search_criteria = '/search/map/Mars/Viking/'
     locations = ['cerberus_enhanced','schiaparelli_enhanced', 'syrtis_major_enhanced','valles_marineris_enhanced']
